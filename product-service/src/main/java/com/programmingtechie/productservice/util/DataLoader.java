@@ -2,17 +2,20 @@ package com.programmingtechie.productservice.util;
 
 import com.programmingtechie.productservice.model.Product;
 import com.programmingtechie.productservice.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Component
-@RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {
 
     private final ProductRepository productRepository;
+
+    public DataLoader(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
